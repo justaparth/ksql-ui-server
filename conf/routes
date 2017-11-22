@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                              controllers.HomeController.index()
+
+# Streams
+POST    /streams/all                   controllers.StreamController.all()
+GET     /streams/:id                   controllers.StreamController.get(id: String)
+
+# Tables
+POST    /tables/all                   controllers.TableController.all()
+GET     /tables/:id                   controllers.TableController.get(id: String)
+
+# Queries
+# TODO is this right? this works, but still.
+GET    /query                         controllers.QueryController.query()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
